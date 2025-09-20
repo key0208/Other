@@ -1,0 +1,20 @@
+Domain,Indicator (Placeholder / Example),Definition (Short),Unit,Spatial Unit (Planning-ready),Temporal Granularity,Primary Source(s),Backup / Alternative Source(s),Notes (Access / Privacy / Use)
+Demand,OD flows by mode (estimated),Estimated trip counts between origins and destinations per mode,trips/day,MSOA/LSOA or H3 k=7–9,daily/weekly,National Travel Survey; partner mobility trajectories; operator logs,Model-based OD from passive data; census travel-to-work,Subject to access and privacy
+Demand,Mode share per place,Proportion of trips by shared modes vs alternatives,%,MSOA/LSOA or H3,monthly/quarterly,Survey + operator aggregates,Model inference from OD + operators,Calibration against benchmarks
+Demand,Trip length distribution,Histogram of trip distances per mode,km,national/place-level,monthly,Operator logs; passive trajectories,Survey recall; inferred from network,Used in pooling scenarios
+Demand,Departure time distribution,Share of trips by time-of-day,% by hour,place-level,monthly,Operator logs; passive trajectories,Automated counts around stations,Peak/off-peak effects
+Population,Population density,Residents per area,people/km²,MSOA/LSOA or H3,annual,Census; official statistics,WorldPop/ghsl,Baseline demand proxy
+Population,Income / deprivation index,Socioeconomic status proxy,index,MSOA/LSOA,annual/periodic,Official statistics,Synthetic small-area estimates,Equity analysis
+Population,Car ownership rate,Vehicles per household,ratio,MSOA/LSOA,annual,Official statistics,Model-based estimation,Modal substitution potential
+Population,Age / disability shares,Share of elderly / disabled population,%,MSOA/LSOA,annual,Official statistics,Health surveys,Accessibility needs
+Built env,Land use / activity density,"Jobs, retail, education, healthcare density",POIs/km²,MSOA/LSOA or H3,annual/periodic,Official registers; POI datasets,OSM; commercial POIs,Trip production/attraction
+Network,Road network density & connectivity,"Links/km², intersection density",km/km²; nodes/km²,H3 or buffer,annual,OpenStreetMap + national road data,Local authority GIS,Affects cycling/scooter viability
+Network,"PT supply (stops, frequency)",Stop density; headway proxy,stops/km²; headways,MSOA/LSOA or H3,timetable/seasonal,GTFS; operator timetables,Open data portals,Integration with shared modes
+Topography,Slope / elevation penalty,Average gradient on links,%,H3 or link-level,static,National DEM,SRTM/ASTER,"E-bike advantage, station siting"
+Curb/parking,Parking/curb capacity proxy,Approximate legal/usable curb length or bays,m; bays,street segment/H3,periodic,Local authority asset data,Imagery-derived proxies,Affects car clubs/DRT stops
+Infrastructure,Docking/charging sites,Existing docking hubs or EV chargers,count per area,MSOA/LSOA or H3,periodic,Operator datasets; open EV charger maps,Local datasets,Supply constraints
+Pricing/policy,Tariffs & passes,Price levels and integrated products,index,operator/place-level,periodic,Operator websites/APIs,Regulatory filings,User cost component
+Operations,Fleet size & rebalancing,Available vehicles and rebalancing policy,vehicles; policy flags,operator/place-level,periodic,Operator data (confidential),Scenario assumptions,Portfolio optimisation constraints
+Usage,Observed shared-mode trips,"Counts, duration, distance",trips; min; km,place-level,daily/weekly,Operator logs; open portals,Sampled app data,Validation targets
+Accessibility,Gravity/cumulative accessibility,Reachable jobs/POIs within thresholds,index,MSOA/LSOA or H3,periodic,Network models + POIs,Open datasets,Used as explanatory features
+Equity,Coverage gaps,Areas under-served relative to need,binary/index,MSOA/LSOA or H3,periodic,Model outputs + demographics,Audit with local data,For policy targeting
